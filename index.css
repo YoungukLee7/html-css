@@ -1,0 +1,119 @@
+a {
+    color: tomato;
+}
+
+a {
+    color: blue;
+}
+/* wrap class 안에 있는 모든 태그에 적용 */
+.wrap > * {
+    font-size: 3rem;
+}
+
+.wrapBox {
+    /* display: block; */
+    display: flex; /* 부모 위치에 있는 태그에 flex를 적용 */
+    flex-direction: row; /* 가로 정렬 */
+    width: 100vw;
+    height: 100vh;
+}
+
+.firstbox {
+    flex: 1; /* 부모 위치에 있는 태그에 flex를 적용 하였기 때문에 자식이 flex를 사용할 수 있다 */
+    background-color: red;
+    color: white;
+}
+
+.secondbox {
+    flex: 1;
+    background-color: yellow;
+}
+
+.thirdbox {
+    flex: 2;
+    background-color: green;
+    color: white;
+}
+/*
+수치 단위
+px
+rem
+em
+%
+vw
+vh
+*/
+
+.wrapBox > div {
+    padding: 5rem;
+}
+
+/* 반응형 큰 값이 위에 위치해야 한다. */
+@media (max-width: 1040px) {
+    .wrapBox {
+        flex-direction: column-reverse;
+    }
+
+    .firstbox {
+        flex: 1;
+        background-color: rgb(52, 172, 136);
+        color: white;
+    }
+
+    .secondbox {
+        flex: 1;
+        background-color: rgb(135, 46, 194);
+    }
+
+    .thirdbox {
+        flex: 2;
+        background-color: rgb(172, 147, 38);
+        color: white;
+    }
+}
+
+/* 반응형 */
+@media (max-width: 740px) {
+    .wrapBox {
+        flex-direction: column;
+    }
+
+    .firstbox {
+        flex: 1;
+        background-color: rgb(52, 172, 136);
+        color: white;
+    }
+
+    .secondbox {
+        flex: 1;
+        background-color: rgb(135, 46, 194);
+    }
+
+    .thirdbox {
+        flex: 2;
+        background-color: rgb(172, 147, 38);
+        color: white;
+    }
+}
+
+/* 부모 */
+.wrapLoginBox {
+    padding: 10px;
+}
+
+/* 부등호: 부모 바로아래 div */
+.wrapLoginBox > div {
+    padding: 25em 45em;
+}
+
+/* 부등호 없을 경우: 부모 아래에 form(부모) */
+.wrapLoginBox form {
+    display: flex;
+    /* 세로 정렬 */
+    flex-direction: column;
+}
+
+.wrapLoginBox button {
+    margin-top: 15px;
+    background-color: gray;
+}
